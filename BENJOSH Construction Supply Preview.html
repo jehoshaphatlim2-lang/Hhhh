@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BENJOSH Construction Supply | Waterproofing & Hardware Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#FFC800',
+                            yellowDark: '#E5B200',
+                            teal: '#008B8B',
+                            tealLight: '#00A8A8',
+                            dark: '#18181B',
+                            charcoal: '#27272A',
+                            accent: '#E65100'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulseGlow 2.5s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'bg-slide': 'bgSlide 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(3deg)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(255, 200, 0, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(255, 200, 0, 0.8)' }
+                        },
+                        bgSlide: {
+                            '0%': { backgroundPosition: '0 0' },
+                            '100%': { backgroundPosition: '1000px 1000px' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Background Canvas and Grid Patterns */
+        .bg-pattern {
+            background-color: #18181B;
+            background-image: 
+                radial-gradient(rgba(255, 200, 0, 0.08) 1.5px, transparent 1.5px),
+                radial-gradient(rgba(0, 139, 139, 0.08) 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 200, 0, 0.15) 0%, rgba(24, 24, 27, 0.95) 70%),
+                              url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffc800' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(39, 39, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 200, 0, 0.15);
+        }
+
+        .glass-card-hover:hover {
+            border-color: rgba(255, 200, 0, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(255, 200, 0, 0.25);
+            transform: translateY(-5px);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFC800;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E5B200;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-teal text-white py-2 px-4 text-xs md:text-sm font-medium">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Authorized Sika® Waterproofing Partner & Complete Hardware Center</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-xs">
+                <span><i class="fa-solid fa-clock text-brand-yellow mr-1"></i> Mon-Sat: 7:30 AM - 5:30 PM</span>
+                <span><i class="fa-solid fa-phone text-brand-yellow mr-1"></i> Direct Hotline: (054) 881-2345</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-zinc-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center font-heading font-black text-brand-dark text-2xl shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        B
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-xl md:text-2xl tracking-tight text-white flex items-center gap-1.5">
+                            BENJOSH <span class="text-brand-yellow text-xs px-2 py-0.5 rounded bg-brand-yellow/10 border border-brand-yellow/30 font-semibold tracking-wider uppercase hidden sm:inline-block">Hardware</span>
+                        </div>
+                        <p class="text-xs text-brand-tealLight font-medium tracking-wider">CONSTRUCTION SUPPLY</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#hero" class="text-slate-200 hover:text-brand-yellow transition-colors">Home</a>
+                    <a href="#waterproofing" class="text-slate-200 hover:text-brand-yellow transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-shield-halved text-brand-yellow"></i> Sika® Zone
+                    </a>
+                    <a href="#catalog" class="text-slate-200 hover:text-brand-yellow transition-colors">Hardware Catalog</a>
+                    <a href="#estimator" class="text-slate-200 hover:text-brand-yellow transition-colors">Quote Estimator</a>
+                    <a href="#contact" class="text-slate-200 hover:text-brand-yellow transition-colors">Contact Us</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="#estimator" class="bg-brand-yellow hover:bg-brand-yellowDark text-brand-dark px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brand-yellow/20 hover:shadow-brand-yellow/40 transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator"></i> Quick Quote
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-zinc-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileDrawer" class="hidden lg:hidden bg-brand-charcoal border-b border-zinc-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" class="block py-2 text-slate-200 hover:text-brand-yellow">Home</a>
+            <a href="#waterproofing" class="block py-2 text-brand-yellow font-semibold">Sika® Waterproofing</a>
+            <a href="#catalog" class="block py-2 text-slate-200 hover:text-brand-yellow">Hardware Catalog</a>
+            <a href="#estimator" class="block py-2 text-slate-200 hover:text-brand-yellow">Estimate Materials</a>
+            <a href="#contact" class="block py-2 text-slate-200 hover:text-brand-yellow">Store Location & Hours</a>
+            <a href="#estimator" class="inline-block w-full text-center bg-brand-yellow text-brand-dark py-2.5 rounded-lg font-bold mt-2">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH BRAND WATERMARK BACKGROUND -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center hero-pattern overflow-hidden py-16 lg:py-24">
+        <!-- Floating Animated Background Watermark Logo -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-5 select-none overflow-hidden">
+            <div class="font-heading font-black text-[18vw] leading-none text-white tracking-widest uppercase animate-pulse">
+                BENJOSH
+            </div>
+        </div>
+
+        <!-- Floating Hardware Graphics Particles -->
+        <div class="absolute top-1/4 left-10 text-brand-yellow/20 text-5xl animate-float pointer-events-none">
+            <i class="fa-solid fa-ruler-combined"></i>
+        </div>
+        <div class="absolute bottom-1/4 left-1/4 text-brand-teal/30 text-6xl animate-float-delayed pointer-events-none">
+            <i class="fa-solid fa-faucet-drip"></i>
+        </div>
+        <div class="absolute top-1/3 right-12 text-brand-yellow/20 text-7xl animate-float pointer-events-none">
+            <i class="fa-solid fa-hammer"></i>
+        </div>
+        <div class="absolute bottom-12 right-1/3 text-brand-teal/30 text-5xl animate-float-delayed pointer-events-none">
+            <i class="fa-solid fa-paint-roller"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs md:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-award"></i> Premier Construction & Hardware Depot
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-tight">
+                        Building Stronger Foundations With <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-amber-300 to-yellow-500">BENJOSH</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed font-light">
+                        Your one-stop supply store for premium construction materials, certified Sika® waterproofing solutions, power tools, plumbing fixtures, paints, and everyday hardware needs.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#catalog" class="px-8 py-4 bg-brand-yellow hover:bg-brand-yellowDark text-brand-dark font-heading font-extrabold text-base rounded-xl shadow-xl shadow-brand-yellow/20 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-boxes-stacked"></i> Explore Hardware Store
+                        </a>
+                        <a href="#waterproofing" class="px-8 py-4 bg-zinc-800/80 hover:bg-zinc-700 text-white font-heading font-bold text-base rounded-xl border border-zinc-600 hover:border-brand-teal transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-droplet text-cyan-400"></i> Waterproofing Solutions
+                        </a>
+                    </div>
+
+                    <!-- Store Key Highlights Cards -->
+                    <div class="grid grid-cols-3 gap-3 pt-6 border-t border-zinc-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center p-3 rounded-xl bg-zinc-900/50 border border-zinc-800">
+                            <div class="text-brand-yellow font-heading font-black text-xl md:text-2xl">100%</div>
+                            <div class="text-xs text-slate-400 mt-1">Authentic Products</div>
+                        </div>
+                        <div class="text-center p-3 rounded-xl bg-zinc-900/50 border border-zinc-800">
+                            <div class="text-brand-tealLight font-heading font-black text-xl md:text-2xl">SIKA®</div>
+                            <div class="text-xs text-slate-400 mt-1">Certified Partner</div>
+                        </div>
+                        <div class="text-center p-3 rounded-xl bg-zinc-900/50 border border-zinc-800">
+                            <div class="text-brand-yellow font-heading font-black text-xl md:text-2xl">FAST</div>
+                            <div class="text-xs text-slate-400 mt-1">Bulk Delivery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Store Sign / Visual Feature -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Store Sign Box Render Inspired by Storefront -->
+                    <div class="relative bg-gradient-to-b from-amber-400 to-brand-yellow rounded-2xl p-6 md:p-8 text-brand-dark shadow-2xl border-4 border-amber-300 transform lg:rotate-1 hover:rotate-0 transition-transform duration-500">
+                        
+                        <!-- Sika Triangle Badge Header -->
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="bg-black text-brand-yellow text-xs font-black px-2.5 py-1 rounded tracking-widest uppercase">Verified Storefront</span>
+                                <h3 class="font-heading font-black text-3xl tracking-tight mt-2 text-black">BENJOSH</h3>
+                                <p class="text-xs font-bold tracking-widest text-black/80">CONSTRUCTION SUPPLY</p>
+                            </div>
+                            <!-- Sika Inspired Red Triangle Logo SVG -->
+                            <div class="w-16 h-16 bg-red-600 rounded-lg shadow-lg flex items-center justify-center p-2 text-white font-black text-center text-xs leading-none">
+                                <div>
+                                    <div class="text-sm font-extrabold tracking-tighter">Sika</div>
+                                    <div class="text-[8px] uppercase tracking-widest mt-0.5">Building Trust</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Storefront Feature Items Mockup -->
+                        <div class="space-y-4">
+                            <div class="bg-black/90 text-white rounded-xl p-4 flex items-center space-x-4 border border-yellow-500/30">
+                                <div class="w-12 h-12 rounded-lg bg-yellow-500/20 text-brand-yellow flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-brand-yellow">WATERPROOFESSIONALS</h4>
+                                    <p class="text-xs text-slate-300">Complete roof, deck, & masonry waterproofing line.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/90 text-white rounded-xl p-4 flex items-center space-x-4 border border-yellow-500/30">
+                                <div class="w-12 h-12 rounded-lg bg-teal-500/20 text-brand-tealLight flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-gas-cylinder"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-slate-100">LPG Refills & Hardware</h4>
+                                    <p class="text-xs text-slate-300">Safety certified LPG tanks, hoses, and regulators.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/90 text-white rounded-xl p-4 flex items-center space-x-4 border border-yellow-500/30">
+                                <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-solar-panel"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-slate-100">Solar & Power Lighting</h4>
+                                    <p class="text-xs text-slate-300">Commercial grade solar street lights & fixtures.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Store Badge Footer -->
+                        <div class="mt-6 pt-4 border-t border-black/20 flex items-center justify-between text-xs font-bold text-black/80">
+                            <span><i class="fa-solid fa-circle-check text-green-800"></i> Open for Walk-ins</span>
+                            <span><i class="fa-solid fa-truck-fast"></i> Site Delivery Available</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIKA WATERPROOFING SPECIALTY SECTION -->
+    <section id="waterproofing" class="py-20 bg-gradient-to-b from-zinc-900 to-brand-dark relative border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-600/40 text-red-400 text-xs font-bold tracking-widest uppercase mb-3">
+                    <i class="fa-solid fa-droplet-slash"></i> Featured Specialty
+                </div>
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-white">
+                    The <span class="text-red-500">WATERPROOFESSIONALS</span> Hub
+                </h2>
+                <p class="text-slate-400 mt-3 text-base">
+                    Protect your buildings from structural dampness, leaks, and weather wear with authentic Sika® high-grade sealant and waterproofing chemicals available at BENJOSH.
+                </p>
+            </div>
+
+            <!-- Sika Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Sika Item 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 relative group">
+                    <div class="w-14 h-14 bg-red-600/20 text-red-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bucket"></i>
+                    </div>
+                    <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Concrete Waterproofing</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-1 mb-3">SikaTop® Seal-107</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Two-part polymer modified cementitious waterproof mortar slurry. Perfect for water tanks, basements, and wet rooms.
+                    </p>
+                    <button onclick="openModal('SikaTop® Seal-107', 'Two-part polymer modified mortar', 'Waterproofing', '₱1,850 / Set')" class="w-full py-2.5 rounded-lg bg-zinc-800 hover:bg-red-600 text-white font-semibold text-xs tracking-wider transition-colors">
+                        VIEW SPECIFICATIONS
+                    </button>
+                </div>
+
+                <!-- Sika Item 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 relative group border-brand-yellow/30">
+                    <div class="absolute -top-3 right-4 bg-brand-yellow text-brand-dark text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+                        Best Seller
+                    </div>
+                    <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-fill-drip"></i>
+                    </div>
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Roof & Wall Coating</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-1 mb-3">SikaFill® Elastomeric</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Flexible elastic acrylic coating for waterproofing roofs, gutters, and exterior walls with UV resistance.
+                    </p>
+                    <button onclick="openModal('SikaFill® Elastomeric', 'Flexible UV Resistant Acrylic Coating', 'Waterproofing', '₱2,450 / 16L')" class="w-full py-2.5 rounded-lg bg-brand-yellow hover:bg-brand-yellowDark text-brand-dark font-bold text-xs tracking-wider transition-colors">
+                        VIEW SPECIFICATIONS
+                    </button>
+                </div>
+
+                <!-- Sika Item 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 relative group">
+                    <div class="w-14 h-14 bg-teal-500/20 text-brand-tealLight rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gun"></i>
+                    </div>
+                    <span class="text-xs font-bold text-brand-tealLight uppercase tracking-wider">Joint Sealants</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-1 mb-3">Sikaflex®-11 FC+</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Multi-purpose elastic polyurethane joint sealant and adhesive with strong bonding for expansion joints.
+                    </p>
+                    <button onclick="openModal('Sikaflex®-11 FC+', 'Polyurethane Adhesive & Sealant', 'Joint Sealant', '₱420 / Cartridge')" class="w-full py-2.5 rounded-lg bg-zinc-800 hover:bg-brand-teal text-white font-semibold text-xs tracking-wider transition-colors">
+                        VIEW SPECIFICATIONS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARDWARE CATEGORIES & INTERACTIVE SHOWCASE GALLERY -->
+    <section id="catalog" class="py-20 bg-pattern relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-yellow font-bold text-sm uppercase tracking-wider"><i class="fa-solid fa-store mr-1"></i> Inventory Catalog</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-white mt-1">Explore Hardware Supplies</h2>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filterBtnContainer">
+                    <button onclick="filterCategory('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-brand-yellow text-brand-dark transition-all">All Products</button>
+                    <button onclick="filterCategory('waterproof')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-zinc-800 text-slate-300 hover:bg-zinc-700 transition-all">Waterproofing</button>
+                    <button onclick="filterCategory('tools')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-zinc-800 text-slate-300 hover:bg-zinc-700 transition-all">Tools</button>
+                    <button onclick="filterCategory('plumbing')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-zinc-800 text-slate-300 hover:bg-zinc-700 transition-all">Plumbing & Gas</button>
+                    <button onclick="filterCategory('electrical')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-zinc-800 text-slate-300 hover:bg-zinc-700 transition-all">Electrical</button>
+                    <button onclick="filterCategory('structural')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-zinc-800 text-slate-300 hover:bg-zinc-700 transition-all">Masonry</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+                
+                <!-- Card 1 -->
+                <div class="product-item waterproof glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-brand-yellow text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 uppercase">Sika Specialty</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">SikaGrout®-215</h4>
+                    <p class="text-xs text-slate-400 mt-1">Shrinkage compensated cementitious grout for machine bases.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱650.00</span>
+                        <button onclick="openModal('SikaGrout®-215', 'High precision non-shrink cementitious grout bag', 'Waterproofing', '₱650.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-item tools glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-brand-yellow text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30 uppercase">Power Tools</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">Heavy Duty Rotary Hammer</h4>
+                    <p class="text-xs text-slate-400 mt-1">800W industrial SDS Plus drill for concrete chipping.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱4,250.00</span>
+                        <button onclick="openModal('Heavy Duty Rotary Hammer', '800W SDS Plus motor, 3-mode operation', 'Power Tools', '₱4,250.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-item plumbing glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-brand-tealLight text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-fire-flame-simple"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/10 text-brand-tealLight border border-teal-500/30 uppercase">Plumbing & Gas</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">LPG Gas Cylinder Refill</h4>
+                    <p class="text-xs text-slate-400 mt-1">11kg safe cooking gas cylinder exchange and fresh refill.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱1,050.00</span>
+                        <button onclick="openModal('LPG Gas Tank Refill', 'Standard 11kg cooking gas safety sealed', 'Plumbing & Gas', '₱1,050.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-item electrical glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-amber-400 text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 uppercase">Electrical</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">Solar LED Outdoor Light</h4>
+                    <p class="text-xs text-slate-400 mt-1">100W IP65 waterproof solar powered street floodlight.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱1,490.00</span>
+                        <button onclick="openModal('Solar LED Street Light', '100W dusk to dawn sensor with remote control', 'Electrical', '₱1,490.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-item structural glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-slate-300 text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-500/10 text-zinc-300 border border-zinc-500/30 uppercase">Masonry</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">Portland Cement (40kg)</h4>
+                    <p class="text-xs text-slate-400 mt-1">Type 1 high strength structural cement for concrete works.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱245.00</span>
+                        <button onclick="openModal('Portland Cement 40kg', 'Standard structural grade cement', 'Masonry', '₱245.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-item plumbing glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-blue-400 text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-pipes-asbestos"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30 uppercase">Plumbing</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">PPR Pipe 20mm (4 meters)</h4>
+                    <p class="text-xs text-slate-400 mt-1">PN20 hot & cold pressure sanitary water supply pipe.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱180.00</span>
+                        <button onclick="openModal('PPR Pipe 20mm PN20', 'Hot and cold fused pressure water pipe', 'Plumbing', '₱180.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-item tools glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-amber-500 text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 uppercase">Hand Tools</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">Professional Leveler 24"</h4>
+                    <p class="text-xs text-slate-400 mt-1">Heavy-duty aluminum spirit level with shockproof vials.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">₱520.00</span>
+                        <button onclick="openModal('Professional Spirit Level 24 inch', 'Magnetic aluminum frame level tool', 'Hand Tools', '₱520.00')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-item waterproof glass-card rounded-xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-44 bg-zinc-800/80 rounded-lg flex items-center justify-center text-cyan-400 text-5xl mb-4 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bottle-droplet"></i>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 uppercase">Sika Waterproofing</span>
+                    <h4 class="font-heading font-bold text-lg text-white mt-2">Sika® Waterbars</h4>
+                    <p class="text-xs text-slate-400 mt-1">Flexible PVC waterstops for sealing construction expansion joints.</p>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+                        <span class="text-brand-yellow font-bold text-base">Inquire Price</span>
+                        <button onclick="openModal('Sika® Waterbars PVC', 'Sealing expansion & construction joints in concrete', 'Waterproofing', 'Custom Quote')" class="p-2 rounded-lg bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE INQUIRY & MATERIAL ESTIMATOR TOOL -->
+    <section id="estimator" class="py-20 bg-zinc-900 border-t border-zinc-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-tealLight font-bold text-sm uppercase tracking-wider"><i class="fa-solid fa-calculator mr-1"></i> Interactive Calculator</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-white">Instant Material Estimator</h2>
+                    <p class="text-slate-400 leading-relaxed text-sm md:text-base">
+                        Select the construction items and quantities you require for your ongoing project to get an instant cost summary. Direct export to WhatsApp or Viber quote requests.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-3 text-slate-300 text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                            <span>Real-time price calculations with contractor discounts on bulk orders.</span>
+                        </div>
+                        <div class="flex items-start space-x-3 text-slate-300 text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                            <span>Free consultation for Sika® waterproofing application methods.</span>
+                        </div>
+                        <div class="flex items-start space-x-3 text-slate-300 text-sm">
+                            <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                            <span>Fast delivery scheduling right to your job site.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Estimator Form Box -->
+                <div class="lg:col-span-7 bg-brand-charcoal p-6 sm:p-8 rounded-2xl border border-brand-yellow/30 shadow-2xl">
+                    <h3 class="text-xl font-heading font-bold text-white mb-6 flex items-center justify-between">
+                        <span>Project Item Calculator</span>
+                        <span class="text-xs text-brand-yellow font-normal"><i class="fa-solid fa-bolt"></i> Live Estimate</span>
+                    </h3>
+
+                    <!-- Item selection inputs -->
+                    <div class="space-y-4">
+                        <!-- Item 1 -->
+                        <div class="flex items-center justify-between bg-zinc-800/70 p-3.5 rounded-xl border border-zinc-700">
+                            <div>
+                                <div class="font-semibold text-white text-sm">SikaTop® Seal-107 Set</div>
+                                <div class="text-xs text-slate-400">₱1,850.00 per kit</div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateQty('sika', -1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">-</button>
+                                <span id="qty-sika" class="w-8 text-center font-bold text-brand-yellow text-sm">0</span>
+                                <button onclick="updateQty('sika', 1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex items-center justify-between bg-zinc-800/70 p-3.5 rounded-xl border border-zinc-700">
+                            <div>
+                                <div class="font-semibold text-white text-sm">Portland Cement (40kg)</div>
+                                <div class="text-xs text-slate-400">₱245.00 per bag</div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateQty('cement', -1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">-</button>
+                                <span id="qty-cement" class="w-8 text-center font-bold text-brand-yellow text-sm">0</span>
+                                <button onclick="updateQty('cement', 1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-center justify-between bg-zinc-800/70 p-3.5 rounded-xl border border-zinc-700">
+                            <div>
+                                <div class="font-semibold text-white text-sm">LPG Gas Refill (11kg)</div>
+                                <div class="text-xs text-slate-400">₱1,050.00 per tank</div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateQty('lpg', -1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">-</button>
+                                <span id="qty-lpg" class="w-8 text-center font-bold text-brand-yellow text-sm">0</span>
+                                <button onclick="updateQty('lpg', 1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-center justify-between bg-zinc-800/70 p-3.5 rounded-xl border border-zinc-700">
+                            <div>
+                                <div class="font-semibold text-white text-sm">Sikaflex®-11 FC+ Sealant</div>
+                                <div class="text-xs text-slate-400">₱420.00 per cartridge</div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateQty('sealant', -1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">-</button>
+                                <span id="qty-sealant" class="w-8 text-center font-bold text-brand-yellow text-sm">0</span>
+                                <button onclick="updateQty('sealant', 1)" class="w-8 h-8 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-bold flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Cost Bar -->
+                    <div class="mt-6 pt-4 border-t border-zinc-700 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Estimated Total Amount:</span>
+                            <div class="text-3xl font-heading font-black text-brand-yellow" id="totalPriceDisplay">₱0.00</div>
+                        </div>
+                        <button onclick="sendInquiry()" class="w-full sm:w-auto px-6 py-3 bg-brand-yellow hover:bg-brand-yellowDark text-brand-dark font-heading font-extrabold text-sm rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Send Quote Request
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STORE LOCATION & CONTACT INFO -->
+    <section id="contact" class="py-20 bg-brand-dark relative border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact info -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-yellow font-bold text-sm uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Visit Store</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-white">BENJOSH Storefront</h2>
+                    <p class="text-slate-400 text-base">
+                        Come visit our retail store for hands-on assistance, bulk orders, and custom material advice.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Store Address</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">BENJOSH Construction Supply Highway Depot, Main Road</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-teal/20 border border-brand-teal/40 text-brand-tealLight flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Operating Hours</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">Monday to Saturday: 7:30 AM – 5:30 PM</p>
+                                <p class="text-slate-500 text-[11px]">Sunday: Closed / Emergency Delivery Only</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Inquiries & Orders</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">Mobile: +63 (917) 123-4567 | Phone: (054) 881-2345</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Location Map Mockup -->
+                <div class="lg:col-span-6 bg-zinc-900 rounded-2xl border border-zinc-800 p-4 relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://placehold.co/800x600/1a1a1a/ffd000?text=BENJOSH+Store+Map+Location');"></div>
+                    
+                    <div class="relative z-10 bg-brand-dark/90 backdrop-blur-md p-4 rounded-xl border border-zinc-700 max-w-xs">
+                        <div class="font-bold text-white text-sm flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow"></span> BENJOSH Hardware
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1">Yellow storefront banner with Sika Waterproofing display.</p>
+                    </div>
+
+                    <div class="relative z-10 flex justify-end">
+                        <a href="https://maps.google.com" target="_blank" class="px-4 py-2 bg-brand-yellow text-brand-dark font-bold text-xs rounded-lg shadow hover:bg-brand-yellowDark transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER BRANDING -->
+    <footer class="bg-black text-slate-400 py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-zinc-800 pb-8">
+                <!-- Footer Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-brand-yellow rounded-lg flex items-center justify-center font-heading font-black text-brand-dark text-xl">
+                        B
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-white text-lg tracking-tight">BENJOSH CONSTRUCTION SUPPLY</div>
+                        <p class="text-xs text-brand-tealLight">WATERPROOFESSIONALS & Hardware Center</p>
+                    </div>
+                </div>
+
+                <!-- Quick links -->
+                <div class="flex flex-wrap gap-6 text-xs font-semibold">
+                    <a href="#hero" class="hover:text-brand-yellow transition-colors">Home</a>
+                    <a href="#waterproofing" class="hover:text-brand-yellow transition-colors">Sika Products</a>
+                    <a href="#catalog" class="hover:text-brand-yellow transition-colors">Catalog</a>
+                    <a href="#estimator" class="hover:text-brand-yellow transition-colors">Calculator</a>
+                    <a href="#contact" class="hover:text-brand-yellow transition-colors">Location</a>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="currentYear"></span> BENJOSH Construction Supply. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0">Certified Quality Construction Materials & Sealants</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="productModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-brand-yellow/40 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div id="modalBadge" class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40 inline-block uppercase mb-2">Category</div>
+            <h3 id="modalTitle" class="text-2xl font-heading font-bold text-white mb-2">Product Title</h3>
+            <p id="modalDesc" class="text-slate-300 text-sm mb-6">Product details description.</p>
+            
+            <div class="bg-zinc-800 p-3 rounded-xl mb-6 flex justify-between items-center">
+                <span class="text-xs text-slate-400">Retail Unit Price:</span>
+                <span id="modalPrice" class="text-brand-yellow font-heading font-black text-xl">₱0.00</span>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="closeModal()" class="w-1/2 py-2.5 rounded-xl border border-zinc-700 hover:bg-zinc-800 text-slate-300 text-xs font-bold transition-colors">Close</button>
+                <button onclick="addModalItemToEstimator()" class="w-1/2 py-2.5 rounded-xl bg-brand-yellow hover:bg-brand-yellowDark text-brand-dark text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-cart-plus"></i> Inquire Item
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+        // Mobile drawer navigation toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // Interactive hardware catalog category filter
+        function filterCategory(cat) {
+            const items = document.querySelectorAll('.product-item');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            // Toggle button styles
+            btns.forEach(btn => {
+                btn.classList.remove('bg-brand-yellow', 'text-brand-dark');
+                btn.classList.add('bg-zinc-800', 'text-slate-300');
+            });
+            event.target.classList.remove('bg-zinc-800', 'text-slate-300');
+            event.target.classList.add('bg-brand-yellow', 'text-brand-dark');
+
+            // Filter item visibility
+            items.forEach(item => {
+                if (cat === 'all' || item.classList.contains(cat)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Estimator prices map
+        const prices = {
+            sika: 1850,
+            cement: 245,
+            lpg: 1050,
+            sealant: 420
+        };
+
+        const quantities = {
+            sika: 0,
+            cement: 0,
+            lpg: 0,
+            sealant: 0
+        };
+
+        function updateQty(item, change) {
+            quantities[item] = Math.max(0, quantities[item] + change);
+            document.getElementById(`qty-${item}`).innerText = quantities[item];
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            for (let key in quantities) {
+                total += quantities[key] * prices[key];
+            }
+            document.getElementById('totalPriceDisplay').innerText = '₱' + total.toLocaleString('en-US', { minimumFractionDigits: 2 });
+        }
+
+        function sendInquiry() {
+            let total = 0;
+            let summary = [];
+            for (let key in quantities) {
+                if (quantities[key] > 0) {
+                    summary.push(`${quantities[key]}x ${key.toUpperCase()}`);
+                    total += quantities[key] * prices[key];
+                }
+            }
+            if (summary.length === 0) {
+                alert('Please select at least one material quantity before submitting an inquiry.');
+                return;
+            }
+            const message = encodeURIComponent(`Hello BENJOSH Construction Supply! I would like to inquire about the following quote estimate:\n\n${summary.join('\n')}\n\nTotal Estimated Amount: ₱${total.toLocaleString('en-US')}`);
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        }
+
+        // Quick View Modal Handlers
+        let currentModalTitle = '';
+
+        function openModal(title, desc, cat, price) {
+            currentModalTitle = title;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalBadge').innerText = cat;
+            document.getElementById('modalPrice').innerText = price;
+            
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function addModalItemToEstimator() {
+            closeModal();
+            document.getElementById('estimator').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
